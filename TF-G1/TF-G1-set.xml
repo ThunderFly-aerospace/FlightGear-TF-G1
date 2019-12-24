@@ -3,7 +3,7 @@
 <PropertyList include="TF-G1-yasim-cnf.xml">
 
   <sim>
-    <description>TF-G1 "Submarine" Autogyro (YASim)</description>
+    <description>TF-G1 Autogyro (YASim)</description>
     <author>ThunderFly s.r.o.</author>
     <status>Alpha 0.1</status>
     <rating>
@@ -18,7 +18,7 @@
     </current-view>
 
  <chase-distance-m type="double" archive="y">-3.0</chase-distance-m>
- 
+
  <view n="100">
     <name>Mast Camera View</name>
     <type>lookfrom</type>
@@ -32,7 +32,7 @@
       <pitch-offset-deg>-25</pitch-offset-deg>
     </config>
   </view>
-  
+
   <view n="0">
     <name>Pilot View</name>
     <internal archive="y">true</internal>
@@ -45,7 +45,7 @@
     </config>
   </view>
 
- <!-- 
+ <!--
 
   <view n="103">
     <name>Model View</name>
@@ -119,11 +119,7 @@
       <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
     </config>
   </view>
-  
+
   </sim>
-
-
-
-
+  
 </PropertyList>
-

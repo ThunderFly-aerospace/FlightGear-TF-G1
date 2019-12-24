@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- 
-  
-Normal rotor speed is 600 rpm with a Vmax of 1000 rpm, 
-and the blades have been tested up to 4000N static tensile strength, 
+<!--
+
+Normal rotor speed is 600 rpm with a Vmax of 1000 rpm,
+and the blades have been tested up to 4000N static tensile strength,
 with a maximum centrifugal load of five tons at 300 rpm in a 3-G pull-up maneuver.
 
 Vne:	95 kts
@@ -11,30 +11,30 @@ Max Cruise: 80 kts
 Economy Cruise:  70 kts
 Best Climb: 52 kts
 
-Rotor Diameter: 7 m 
-Rotorblade Chord:180 mm 
-Fuselage Length: 3.5 m 
-Height: 2.0 m 
-Wheel Track: 1.7 m 
-Propeller Diameter: 1.2 m 
-Rotor Disk Area: 38.5 sqm 
-Empty Weight: 167 kg 
-Gross Weight: 290 kg 
-Max Disc Loading: 7.5 kg/sqm 
-Max Power Loading: 3.9 kg/hp 
-Vne: 170 kmh 
-Max Cruise: 140 kmh 
-Economy Cruise: 120 kmh 
-Minimum Speed: 40 kmh 
-Max ROC: 3 m/s 
+Rotor Diameter: 7 m
+Rotorblade Chord:180 mm
+Fuselage Length: 3.5 m
+Height: 2.0 m
+Wheel Track: 1.7 m
+Propeller Diameter: 1.2 m
+Rotor Disk Area: 38.5 sqm
+Empty Weight: 167 kg
+Gross Weight: 290 kg
+Max Disc Loading: 7.5 kg/sqm
+Max Power Loading: 3.9 kg/hp
+Vne: 170 kmh
+Max Cruise: 140 kmh
+Economy Cruise: 120 kmh
+Minimum Speed: 40 kmh
+Max ROC: 3 m/s
 Service Ceiling (estimated): 4000 m (13000 ft)
-Takeoff Run 10 m 
-Landing Run: 5 m 
+Takeoff Run 10 m
+Landing Run: 5 m
 Range: 250 km
 
 -->
 
-<airplane version="2018.1" mass-kg="4.9"> 
+<airplane version="2018.1" mass-kg="4.9">
 
   <approach speed="60" aoa="0">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.60"/>
@@ -45,9 +45,9 @@ Range: 250 km
   </cruise>
 
 
-  <rotor name="main" 
+  <rotor name="main"
 	 x="-0.24" y="0.0" z="0.33"
-         nx="0" ny="0" nz="1"  
+         nx="0" ny="0" nz="1"
          fx="1" fy="0" fz="0"  ccw="1"
          maxcollective="0.0" mincollective="0.0"
          diameter="2"
@@ -57,10 +57,10 @@ Range: 250 km
          chord="0.05"
          rpm="350"
          tiltcenterx="-0.24" tiltcentery="0" tiltcenterz="0.30"
-         mintiltpitch=" 0" 
+         mintiltpitch=" 0"
          maxtiltpitch="20"
-         mintiltroll="-2" 
-         maxtiltroll=" 2" 
+         mintiltroll="-2"
+         maxtiltroll=" 2"
          relbladecenter="0.25"
          dynamic="1"
          sharedflaphinge="0"
@@ -91,13 +91,13 @@ Range: 250 km
 		 incidence-stall-half-sonic-speed="14.5"
 		 lift-factor-stall="0.18"
 		 stall-change-over="10"
-		 drag-factor-stall="2.0" 
-		 
+		 drag-factor-stall="2.0"
+
          cyclic-factor="0.8"
          rotor-correction-factor="0.95"
 	     downwashfactor="0.0"
          balance="0.995"
-	 > 
+	 >
          <control-input axis="/controls/flight/aileron-trim" control="TILTROLL" split="true" src0="-1.0" src1="1.0" dst0="1.0" dst1="-1.0"/>
          <control-input axis="/controls/flight/aileron" control="TILTROLL" src0="-1.0" src1="1.0" dst0="1.0" dst1="-1.0"/>
          <control-input axis="/controls/flight/elevator-trim" control="TILTPITCH" split="true" src0="-1.0" src1="1.0" dst0="1.0" dst1="-1.0"/>
@@ -105,23 +105,23 @@ Range: 250 km
 
  </rotor>
 
- 
+
 
   <rotorgear max-power-engine="0.750"
              max-power-rotor-brake="0.350"
              rotorgear-friction="0.0005"
-             engine-prop-factor="0.02" 
-	         engine-accel-limit="50"
+             engine-prop-factor="0.02"
+	           engine-accel-limit="50"
              yasimdragfactor="30"
              yasimliftfactor="140"
-	     >
+	>
 	<control-input axis="/controls/engines/engine[0]/starter" control="ROTORGEARENGINEON"/>
 	<control-input axis="/controls/rotor/brake" control="ROTORBRAKE"
                  src0="0.0" src1="1.0"
                  dst0="0.0" dst1="1.0"/>
   </rotorgear>
-  
- 
+
+
   <propeller x="0.02" y="0" z="0.03"
 			 mass="0.2"
              moment="0.1"
@@ -132,10 +132,10 @@ Range: 250 km
              cruise-power="1"
              takeoff-power="2"
              takeoff-rpm="3600"
-	         contra="1" 
+	         contra="1"
 	   >
 	<actionpt x="0" y="0" z="0.03"/>
-	    
+
 	<piston-engine eng-power="2" eng-rpm="3800" displacement="20" >
 		<control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
 		<control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
@@ -144,20 +144,20 @@ Range: 250 km
 	</piston-engine>
   </propeller>
 
-  
+
 
  <!-- main fuselage -->
  <fuselage ax="0" ay="0" az="0" bx="-0.62" by="0" bz="0" width="0.2" taper="0" midpoint="0.25"/>
 
   <!-- main tube -->
  <fuselage ax="0" ay="0" az="0" bx="-0.92" by="0" bz="0" width="0.03" taper="1" midpoint="0.6"/>
- 
+
 <!-- gear tubes -->
 <!--
  <fuselage ax="-0.06838" ay="-0.15" az="-0.02754" bx="-0.06838" by="0.15" bz="-0.02754" width="0.03" taper="0" midpoint="0.5"/>
  <fuselage ax="-0.41636" ay="-0.15" az="-0.02754" bx="-0.41636" by="0.15" bz="-0.02754" width="0.03" taper="0" midpoint="0.5"/>
 -->
-  
+
   <hstab x="-0.91" y="0.0" z="0"
          taper="1"
          length="0.15"
@@ -166,13 +166,13 @@ Range: 250 km
 	 dihedral = "0"
 	  >
 	<stall aoa="14" width="4" peak="1.5"/>
-         
+
   </hstab>
 
   <vstab x="-0.91" y="0.15" z="-0.075"
          chord="0.15"
          length="0.15"
-         taper="1" 
+         taper="1"
          sweep="0"
          incidence="0"	>
          <stall aoa="16" width="4" peak="1.5"/>
@@ -180,12 +180,12 @@ Range: 250 km
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
-  </vstab> 
+  </vstab>
 
   <vstab x="-0.91" y="-0.15" z="-0.075"
          chord="0.15"
          length="0.15"
-         taper="1" 
+         taper="1"
          sweep="0"
          incidence="0"  >
          <stall aoa="16" width="4" peak="1.5"/>
@@ -193,12 +193,12 @@ Range: 250 km
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
-  </vstab> 
+  </vstab>
 
- 
- 
+
+
  <!--         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/> -->
- 
+
   <gear x="-0.06471" y="0.225" z="-0.205" compression="0.04">
         <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
@@ -208,7 +208,7 @@ Range: 250 km
         <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   </gear>
-  
+
   <gear x="-0.34368" y="0.225" z="-0.205" compression="0.04">
         <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
@@ -219,7 +219,7 @@ Range: 250 km
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   </gear>
 
-  <!-- tail gear --> 
+  <!-- tail gear -->
   <gear x="-1.12" y="0.000" z="-0.09"
 		compression="0.08"
         ignored-by-solver="1" >
@@ -232,7 +232,7 @@ Range: 250 km
 <!-- rotor head ballast -->
 <ballast  x="-0.24" y="0.0" z="0.33" mass-kg="0.9"/>
 
-<!-- gear weights and balasts --> 
+<!-- gear weights and balasts -->
 <!--
 <weight x="-0.06471" y="0.225" z="-0.2"  mass-prop="/sim/weight[0]/weight-kg"/>
 <weight x="-0.06471" y="-0.225" z="-0.2" mass-prop="/sim/weight[1]/weight-kg"/>
@@ -244,15 +244,15 @@ Range: 250 km
 <ballast  x="-0.06471" y="-0.225" z="-0.2" mass-kg="0.25"/>
 <ballast  x="-0.34368" y="0.225" z="-0.2" mass-kg="0.15"/>
 <ballast  x="-0.34368" y="-0.225" z="-0.2" mass-kg="0.15"/>
-  
 
-<!-- engine balast -->  
+
+<!-- engine balast -->
 <ballast  x="0.0" y="0.0" z="0.02" mass-kg="0.5"/>
 
-<!-- accumulator balasts -->  
+<!-- accumulator balasts -->
 <ballast  x="-0.15" y="0.1" z="0.0" mass-kg="0.55"/>
 
-<!-- accumulator balasts -->  
+<!-- accumulator balasts -->
 <ballast  x="-0.15" y="-0.1" z="0.0" mass-kg="0.55"/>
 
 
@@ -263,5 +263,3 @@ Range: 250 km
 
 
 </airplane>
-
-
