@@ -44,11 +44,10 @@ Range: 250 km
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.75"/>
   </cruise>
 
-
   <rotor name="main"
 	 x="-0.24" y="0.0" z="0.33"
          nx="0" ny="0" nz="1"
-         fx="1" fy="0" fz="0"  ccw="1"
+         fx="1" fy="0" fz="0"  ccw="0"
          maxcollective="0.0" mincollective="0.0"
          diameter="2"
          numblades="2"
@@ -104,27 +103,30 @@ Range: 250 km
          <control-input axis="/controls/flight/elevator" control="TILTPITCH" src0="-1.0" src1="1.0" dst0="1.0" dst1="-1.0"/>
 
  </rotor>
-
-
-
   <rotorgear max-power-engine="0.750"
-             max-power-rotor-brake="0.350"
+             max-power-rotor-brake="0.050"
              rotorgear-friction="0.0005"
              engine-prop-factor="0.02"
 	           engine-accel-limit="50"
              yasimdragfactor="30"
              yasimliftfactor="140"
 	>
-	<control-input axis="/controls/engines/engine[0]/starter" control="ROTORGEARENGINEON"/>
-	<control-input axis="/controls/rotor/brake" control="ROTORBRAKE"
-                 src0="0.0" src1="1.0"
-                 dst0="0.0" dst1="1.0"/>
+  <!-- ROTORGEARENGINEON is unable to handle proportional input (https://sourceforge.net/p/flightgear/flightgear/ci/next/tree/src/FDM/YASim/Rotor.cpp#l1533)-->
+ 	<control-input axis="/controls/engines/engine[0]/starter" control="ROTORGEARENGINEON"/>
+	<control-input axis="/controls/rotor/brake" control="ROTORBRAKE" src0="0.0" src1="1.0" dst0="0.0" dst1="1.0"/>
   </rotorgear>
+
+<!-- Thruster device which does not produce adjacent moments-->
+<!--
+  <thruster x="0" y="0" z="0.03" vx="1" vy="0" vz="0" thrust="6.61">
+  <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
+  </thruster>
+-->
 
 
   <propeller x="0.02" y="0" z="0.03"
-			 mass="0.2"
-             moment="0.1"
+			 mass="0.05"
+             moment="0.05"
              radius="0.203"
              cruise-speed="70"
              cruise-rpm="2800"
@@ -134,16 +136,14 @@ Range: 250 km
              takeoff-rpm="3600"
 	         contra="1"
 	   >
-	<actionpt x="0" y="0" z="0.03"/>
-
-	<piston-engine eng-power="2" eng-rpm="3800" displacement="20" >
-		<control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
-		<control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
-		<control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
-		<control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
-	</piston-engine>
+	    <actionpt x="0" y="0" z="0.03"/>
+    	<piston-engine eng-power="2" eng-rpm="3800" displacement="20" >
+    		<control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+    		<control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+    		<control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+    		<control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+    	</piston-engine>
   </propeller>
-
 
 
  <!-- main fuselage -->
