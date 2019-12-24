@@ -34,43 +34,45 @@ Range: 250 km
 
 -->
 
-<airplane version="2018.1" mass-kg="4.9">
+<airplane version="2018.1" mass-kg="4.9" mtow-kg="25">
 
-  <approach speed="60" aoa="0">
+  <approach speed="20" aoa="0">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.60"/>
   </approach>
 
-  <cruise speed="70" alt="0">
+  <cruise speed="26" alt="0">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.75"/>
   </cruise>
 
   <rotor name="main"
 	 x="-0.24" y="0.0" z="0.33"
          nx="0" ny="0" nz="1"
-         fx="1" fy="0" fz="0"  ccw="0"
-         maxcollective="0.0" mincollective="0.0"
-         diameter="2"
+         fx="1" fy="0" fz="0"  ccw="1"
+         maxcollective="3.0" mincollective="3.0"
+         maxcyclicele="0" mincyclicele="0"
+         maxcyclicail="0" mincyclicail="0"
+         diameter="2.1"
          numblades="2"
-         weightperblade="0.855"
+         weightperblade="1.1"
          twist="0"
          chord="0.05"
-         rpm="350"
+         rpm="700"
          tiltcenterx="-0.24" tiltcentery="0" tiltcenterz="0.30"
          mintiltpitch=" 0"
          maxtiltpitch="20"
          mintiltroll="-2"
          maxtiltroll=" 2"
-         relbladecenter="0.25"
+         relbladecenter="0.7"
          dynamic="1"
          sharedflaphinge="0"
          rellenflaphinge="0.0"
          delta3="1"
-         delta=".8"
+         delta="0.8"
          pitch-a="5.5"
          pitch-b="5.5"
          flapmin="-8"
          flapmax="8"
-         flap0="3"
+         flap0="-3"
          flap0factor="0"
          notorque="0"
          dragfactor="0.30"
@@ -88,9 +90,9 @@ Range: 250 km
 		 airfoil-incidence-no-lift="0"
 		 incidence-stall-zero-speed="15"
 		 incidence-stall-half-sonic-speed="14.5"
-		 lift-factor-stall="0.18"
+		 lift-factor-stall="0.28"
 		 stall-change-over="10"
-		 drag-factor-stall="2.0"
+		 drag-factor-stall="1.5"
 
          cyclic-factor="0.8"
          rotor-correction-factor="0.95"
@@ -107,7 +109,7 @@ Range: 250 km
              max-power-rotor-brake="0.050"
              rotorgear-friction="0.0005"
              engine-prop-factor="0.02"
-	           engine-accel-limit="50"
+	           engine-accel-limit="5"
              yasimdragfactor="30"
              yasimliftfactor="140"
 	>
@@ -117,13 +119,12 @@ Range: 250 km
   </rotorgear>
 
 <!-- Thruster device which does not produce adjacent moments-->
-<!--
+
   <thruster x="0" y="0" z="0.03" vx="1" vy="0" vz="0" thrust="6.61">
   <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
   </thruster>
--->
 
-
+<!--
   <propeller x="0.02" y="0" z="0.03"
 			 mass="0.05"
              moment="0.05"
@@ -144,6 +145,7 @@ Range: 250 km
     		<control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
     	</piston-engine>
   </propeller>
+-->
 
 
  <!-- main fuselage -->
@@ -176,9 +178,9 @@ Range: 250 km
          sweep="0"
          incidence="0"	>
          <stall aoa="16" width="4" peak="1.5"/>
-         <flap0 start="0.18" end="0.82" lift="1.5" drag="1.2"/>
+         <!--<flap0 start="0.18" end="0.82" lift="1.5" drag="1.2"/>
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
-         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>-->
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
 
@@ -189,9 +191,9 @@ Range: 250 km
          sweep="0"
          incidence="0"  >
          <stall aoa="16" width="4" peak="1.5"/>
-         <flap0 start="0.18" end="0.82" lift="1.5" drag="1.2"/>
+         <!--<flap0 start="0.18" end="0.82" lift="1.5" drag="1.2"/>
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
-         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>-->
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
 
