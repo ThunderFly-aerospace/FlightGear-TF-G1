@@ -21,7 +21,7 @@ http://en.wikipedia.org/wiki/Autogyro
 
 VERSION
 0.1 Alpha release
-Finetuned flight model
+Roughly tunned flight model
 Detailed 3d model
 -----
 

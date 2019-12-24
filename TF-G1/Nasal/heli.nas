@@ -34,8 +34,7 @@ var check_gear = func{
 	var wow1 = getprop("gear/gear[1]/wow");
 	var wow2 = getprop("gear/gear[2]/wow");
 	var wow3 = getprop("gear/gear[3]/wow");
-	
-	var kias = getprop("velocities/airspeed-kt");
+
 	var rotrpm = getprop("rotors/main/rpm");
 	
 	
@@ -43,7 +42,7 @@ var check_gear = func{
 	{
 		var wght = 5;
 		
-		#scale weight depending on airspeed
+		#scale weight depending on rotor rpm
 		#important if sliding forward on the ground
 		
 		if (rotrpm>0)
@@ -91,13 +90,4 @@ var check_gear = func{
 	
 }
 
-# vne 110 mph
-# 110 mph = 95.5873866 kts
-# max rotor = 600 rpm
-# engine max 60 kw
-# fuel tank 50 lit = kg#
-# cruse 70-80 kts
-# Max Rate Of Climb: 3 m/s (590 fpm)
-# Service Ceiling (estimated): 4000 m (13000 ft)
-# Minimum Speed: 40 kmh (22 mph) 19 kts
 

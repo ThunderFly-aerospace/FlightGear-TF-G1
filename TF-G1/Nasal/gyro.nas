@@ -27,34 +27,14 @@ setlistener("/sim/signals/reinit", reinit);
 #main loop
 var main_loop = func {
 
-	instrument_lights();
 	engine_values();
-	
-	
+		
 	check_g_load();
 	check_vne_structure();
 	
 	check_rotor_rpm();
 	
 	settimer(main_loop, 0);
-}
-
-
-var instrument_lights = func {
-
-	var mags = getprop("/controls/engines/engine[0]/magnetos");
-	
-	if(mags!=nil and mags>0)
-	{
-		setprop("/systems/electrical/outputs/instrument-lights-norm", 20);
-		#screen.log.write("lights on !!!", 1, 0, 0);
-	}
-	else
-	{
-		setprop("/systems/electrical/outputs/instrument-lights-norm", 0);
-		#screen.log.write("lights off !!!", 1, 0, 0);
-	}
-
 }
 
 var check_g_load = func {
@@ -90,7 +70,7 @@ var	check_rotor_rpm = func {
 	}
 	else {
 		var rpm = getprop("/rotors/main/rpm");
-		if(rpm!=nil and rpm>1000){
+		if(rpm!=nil and rpm>1200){
 			#setprop("/sim/sound/crash",1);
 			#setprop("/sim/messages/copilot","Rotor overspeed !!!");
 			screen.log.write("Rotor overspeed !!!", 1, 0, 0);
@@ -135,7 +115,6 @@ var engine_values = func {
 
 	if (echt0!=nil)
 		eoilt0 = (echt0*0.405);
-
 	
 	var eoilp0=((1*rev0)/(0.01+(eoilt0*0.082))*0.215);
 
@@ -148,14 +127,5 @@ var engine_values = func {
 
 }
 
-# vne 110 mph
-# 110 mph = 95.5873866 kts
-# max rotor = 600 rpm
-# engine max 60 kw
-# fuel tank 50 lit = kg#
-# cruse 70-80 kts
-# Max Rate Of Climb: 3 m/s (590 fpm)
-# Service Ceiling (estimated): 4000 m (13000 ft)
-# Minimum Speed: 40 kmh (22 mph) 19 kts
 
 
