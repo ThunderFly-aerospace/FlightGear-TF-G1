@@ -178,9 +178,9 @@ Range: 250 km
          sweep="0"
          incidence="0"	>
          <stall aoa="16" width="4" peak="1.5"/>
-         <!--<flap0 start="0.18" end="0.82" lift="1.5" drag="1.2"/>
+         <flap0 start="0.18" end="0.82" lift="1.5" drag="1.2"/>
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
-         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>-->
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
 
@@ -191,9 +191,9 @@ Range: 250 km
          sweep="0"
          incidence="0"  >
          <stall aoa="16" width="4" peak="1.5"/>
-         <!--<flap0 start="0.18" end="0.82" lift="1.5" drag="1.2"/>
+         <flap0 start="0.18" end="0.82" lift="1.5" drag="1.2"/>
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
-         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>-->
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
 
