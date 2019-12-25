@@ -248,20 +248,19 @@ Range: 250 km
 <ballast  x="-0.34368" y="-0.225" z="-0.2" mass-kg="0.15"/>
 
 
+
 <!-- engine balast -->
-<ballast  x="0.0" y="0.0" z="0.02" mass-kg="0.5"/>
+<ballast  x="0.0" y="0.0" z="0.02" mass-kg="1.5"/>
+
 
 <!-- accumulator balasts -->
 <ballast  x="-0.15" y="0.1" z="0.0" mass-kg="0.55"/>
-
-<!-- accumulator balasts -->
 <ballast  x="-0.15" y="-0.1" z="0.0" mass-kg="0.55"/>
 
 
 <!-- tail balasts -->
 <ballast  x="-0.98" y="0.15" z="0.00" mass-kg="0.16"/>
 <ballast  x="-0.98" y="-0.15" z="0.00" mass-kg="0.16"/>
-
 
 
 </airplane>
