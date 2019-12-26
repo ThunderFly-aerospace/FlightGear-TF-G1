@@ -59,9 +59,9 @@ Range: 250 km
        rpm="700"
        tiltcenterx="-0.24" tiltcentery="0" tiltcenterz="0.30"
        mintiltpitch=" 0"
-       maxtiltpitch="30"
-       mintiltroll="-5"
-       maxtiltroll=" 5"
+       maxtiltpitch="20"
+       mintiltroll="-2"
+       maxtiltroll=" 2"
        relbladecenter="0.7"
        dynamic="1"
        sharedflaphinge="0"
@@ -95,7 +95,7 @@ Range: 250 km
        cyclic-factor="0.8"
        rotor-correction-factor="0.95"
        downwashfactor="0.0"
-       balance="0.995"
+       balance="0.999995"
 	 >
          <control-input axis="/controls/flight/aileron-trim" control="TILTROLL" split="true" src0="-1.0" src1="1.0" dst0="1.0" dst1="-1.0"/>
          <control-input axis="/controls/flight/aileron" control="TILTROLL" src0="-1.0" src1="1.0" dst0="1.0" dst1="-1.0"/>
@@ -260,5 +260,17 @@ Range: 250 km
 <ballast  x="-0.98" y="0.15" z="0.00" mass-kg="0.16"/>
 <ballast  x="-0.98" y="-0.15" z="0.00" mass-kg="0.16"/>
 
+<!-- hitch -->
+<hitch name="winch" x="0.0" y="0.0" z="0.0">
+    <tow length="50" weight-per-meter="0.0035" elastic-constant="40000" break-force="10000"/>
+    <!-- 3mm paracord-->
+    <winch max-tow-length="1000" min-tow-length="1" initial-tow-length="1000" max-winch-speed="20" power="2" max-force="80"/>
+    <control-input axis="/controls/winch/place" control="PLACEWINCH"/>
+</hitch>
+<hitch name="aerotow" x="0.0" y="0.0" z="0.0" force-is-calculated-by-other="0">
+    <tow length="60" weight-per-meter="0.0035" elastic-constant="9000" break-force="100" mp-auto-connect-period="0.0"/>
+    <winch max-tow-length="1000" min-tow-length="60" initial-tow-length="60"/>
+    <control-input axis="/controls/aerotow/find-aircraft" control="FINDAITOW"/>
+</hitch>
 
 </airplane>
