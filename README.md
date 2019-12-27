@@ -28,6 +28,11 @@ Základní návod k ovládání lze otevřít přímo v okně simulátoru volbou
   * klávesa "B" Velké B (se shiftem), ovládá parkovací brzdy
   * Page-Up a Page-Down ovládají přípust motoru
   * Tabulátor přepíná režim myši
+  * Ctrl+w 	Place winch in front of aircraft, hook in and start winch launch
+  * W   Increase winch speed
+  * w 	Decrease winch speed
+  * Ctrl+o 	Find aircraft for aerotow and hook in
+  * o Open both hooks (pulls the yellow lever) 
 
 Všechny ostatní vstupy je potřeba ovládat proporcionálně, je možné omezeně použít myš.  A nebo [RC ovladač v režimu joysticku](https://opentx.gitbooks.io/manual-for-opentx-2-2/radio_joystick.html).
 
