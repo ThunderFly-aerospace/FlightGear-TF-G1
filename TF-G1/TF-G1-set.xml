@@ -355,26 +355,6 @@
               </mod-up>
 
           </key>
-          <key n="83">
-              <name>S</name>
-              <desc>Vario volume up</desc>
-              <binding>
-                  <command>property-adjust</command>
-                  <property>/instrumentation/ilec-sc7/volume</property>
-                  <step>0.1</step>
-                  <max>1</max>
-              </binding>
-          </key>
-          <key n="115">
-              <name>s</name>
-              <desc>Vario volume down</desc>
-              <binding>
-                  <command>property-adjust</command>
-                  <property>/instrumentation/ilec-sc7/volume</property>
-                  <step>-0.1</step>
-                  <min>0</min>
-              </binding>
-          </key>
           <key n="19">
               <name>Ctrl-s</name>
               <desc>Start/stop smoke</desc>

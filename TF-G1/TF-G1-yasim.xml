@@ -248,12 +248,12 @@ Range: 250 km
 
 
 <!-- engine balast -->
-<ballast  x="0.0" y="0.0" z="0.02" mass-kg="1.5"/>
+<ballast  x="0.0" y="0.0" z="0.02" mass-kg="0.5"/>
 
 
 <!-- accumulator balasts -->
-<ballast  x="-0.15" y="0.1" z="0.0" mass-kg="0.55"/>
-<ballast  x="-0.15" y="-0.1" z="0.0" mass-kg="0.55"/>
+<ballast  x="-0.15" y="0.1" z="0.0" mass-kg="0.25"/>
+<ballast  x="-0.15" y="-0.1" z="0.0" mass-kg="0.25"/>
 
 
 <!-- tail balasts -->
