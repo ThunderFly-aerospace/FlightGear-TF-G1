@@ -195,26 +195,18 @@ Range: 250 km
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
 
-
-
- <!--         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/> -->
-
-  <gear x="-0.06471" y="0.225" z="-0.205" compression="0.04">
+  <gear x="-0.06471" y="0.0" z="-0.205" compression="0.051">
+        <control-input axis="/controls/flight/rudder" control="STEER" square="false" src0="-1.0" src1="1.0" dst0="-0.3" dst1="0.3"/>
         <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   </gear>
 
-  <gear x="-0.06471" y="-0.225" z="-0.205" compression="0.04">
-        <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
-        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
-  </gear>
-
-  <gear x="-0.34368" y="0.225" z="-0.205" compression="0.04">
+  <gear x="-0.34368" y="0.25" z="-0.205" compression="0.051">
         <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   </gear>
 
-  <gear x="-0.34368" y="-0.225" z="-0.205" compression="0.04">
+  <gear x="-0.34368" y="-0.25" z="-0.205" compression="0.051">
         <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   </gear>
@@ -230,7 +222,7 @@ Range: 250 km
  <tank x="-0.1" y="0.0" z="-0.05" capacity="0.2"/>
 
 <!-- rotor head ballast -->
-<ballast  x="-0.24" y="0.0" z="0.33" mass-kg="0.9"/>
+<ballast  x="-0.24" y="0.0" z="0.33" mass-kg="0.5"/>
 
 <!-- gear weights and balasts -->
 <!--
@@ -240,15 +232,14 @@ Range: 250 km
 <weight x="-0.34368" y="-0.225" z="-0.2" mass-prop="/sim/weight[2]/weight-kg"/>
 -->
 
-<ballast  x="-0.06471" y="0.225" z="-0.2" mass-kg="0.25"/>
-<ballast  x="-0.06471" y="-0.225" z="-0.2" mass-kg="0.25"/>
+<ballast  x="-0.06471" y="0" z="-0.2" mass-kg="0.3"/>
 <ballast  x="-0.34368" y="0.225" z="-0.2" mass-kg="0.15"/>
 <ballast  x="-0.34368" y="-0.225" z="-0.2" mass-kg="0.15"/>
 
 
 
 <!-- engine balast -->
-<ballast  x="0.0" y="0.0" z="0.02" mass-kg="0.5"/>
+<ballast  x="0.0" y="0.0" z="0.02" mass-kg="1.2"/>
 
 
 <!-- accumulator balasts -->
@@ -257,8 +248,8 @@ Range: 250 km
 
 
 <!-- tail balasts -->
-<ballast  x="-0.98" y="0.15" z="0.00" mass-kg="0.16"/>
-<ballast  x="-0.98" y="-0.15" z="0.00" mass-kg="0.16"/>
+<ballast  x="-0.98" y="0.15" z="0.00" mass-kg="-0.16"/>
+<ballast  x="-0.98" y="-0.15" z="0.00" mass-kg="-0.16"/>
 
 <!-- hitch -->
 <hitch name="winch" x="0.0" y="0.0" z="0.0">
