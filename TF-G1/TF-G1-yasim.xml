@@ -34,7 +34,7 @@ Range: 250 km
 
 -->
 
-<airplane version="2018.1" mass-kg="4.9" mtow-kg="25">
+<airplane version="2018.1" mass-kg="3.2" mtow-kg="25">
 
   <approach speed="20" aoa="0">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.60"/>
@@ -47,8 +47,8 @@ Range: 250 km
   <rotor name="main"
        x="-0.24" y="0.0" z="0.33"
        nx="0" ny="0" nz="1"
-       fx="1" fy="0" fz="0"  ccw="0"
-       maxcollective="3.0" mincollective="3.0"
+       fx="1" fy="0" fz="0"  ccw="1"
+       maxcollective="3.5" mincollective="3.5"
        maxcyclicele="0" mincyclicele="0"
        maxcyclicail="0" mincyclicail="0"
        diameter="2.1"
@@ -58,8 +58,8 @@ Range: 250 km
        chord="0.05"
        rpm="700"
        tiltcenterx="-0.24" tiltcentery="0" tiltcenterz="0.30"
-       mintiltpitch=" 0"
-       maxtiltpitch="20"
+       mintiltpitch=" 2"
+       maxtiltpitch="22"
        mintiltroll="-2"
        maxtiltroll=" 2"
        relbladecenter="0.7"
@@ -68,8 +68,8 @@ Range: 250 km
        rellenflaphinge="0.0"
        delta3="1"
        delta="0.8"
-       pitch-a="5.5"
-       pitch-b="5.5"
+       pitch-a="6.3"
+       pitch-b="6.3"
        flapmin="-8"
        flapmax="8"
        flap0="-3"
@@ -83,13 +83,13 @@ Range: 250 km
        number-of-parts="8"
        rel-len-where-incidence-is-measured="0.5"
        rel-len-blade-start="0.125"
-  		 airfoil-lift-coefficient="5.1"
+  		 airfoil-lift-coefficient="6.8"
   		 airfoil-drag-coefficient0="0.0075"
   		 airfoil-drag-coefficient1="0.325"
   		 airfoil-incidence-no-lift="0"
   		 incidence-stall-zero-speed="15"
   		 incidence-stall-half-sonic-speed="14.5"
-  		 lift-factor-stall="0.28"
+  		 lift-factor-stall="0.6"
   		 stall-change-over="10"
   		 drag-factor-stall="1.5"
        cyclic-factor="0.8"
@@ -169,8 +169,8 @@ Range: 250 km
 
   </hstab>
 
-  <vstab x="-0.91" y="0.15" z="-0.075"
-         chord="0.35"
+  <vstab x="-0.91" y="0.15" z="-0.055"
+         chord="0.25"
          length="0.15"
          taper="1"
          sweep="0"
@@ -182,8 +182,8 @@ Range: 250 km
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
 
-  <vstab x="-0.91" y="-0.15" z="-0.075"
-         chord="0.35"
+  <vstab x="-0.91" y="-0.15" z="-0.055"
+         chord="0.25"
          length="0.15"
          taper="1"
          sweep="0"
@@ -239,7 +239,7 @@ Range: 250 km
 
 
 <!-- engine balast -->
-<ballast  x="0.0" y="0.0" z="0.02" mass-kg="1.2"/>
+<ballast  x="0.0" y="0.0" z="0.02" mass-kg="0.7"/>
 
 
 <!-- accumulator balasts -->
@@ -248,8 +248,8 @@ Range: 250 km
 
 
 <!-- tail balasts -->
-<ballast  x="-0.98" y="0.15" z="0.00" mass-kg="-0.16"/>
-<ballast  x="-0.98" y="-0.15" z="0.00" mass-kg="-0.16"/>
+<ballast  x="-0.98" y="0.15" z="0.00" mass-kg="0.26"/>
+<ballast  x="-0.98" y="-0.15" z="0.00" mass-kg="0.26"/>
 
 <!-- hitch -->
 <hitch name="winch" x="0.0" y="0.0" z="0.0">
