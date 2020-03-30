@@ -1,5 +1,7 @@
 # TF-G1 UAV electric autogyro flightgear simulator model
 
+[![Join the chat at https://gitter.im/ThunderFly-aerospace/Simulator](https://badges.gitter.im/ThunderFly-aerospace/Simulator.svg)](https://gitter.im/ThunderFly-aerospace/Simulator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Model vírníku TF-G1 pro simulátor [Flightgear](https://home.flightgear.org/).  Je určen k neletovému testování letových konfigurací, misí a změn. 
 
 ![Flightgear simulator in action](./docs/img/fly2.png "Flightgear simulator in action")
