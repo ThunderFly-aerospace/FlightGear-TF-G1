@@ -259,7 +259,7 @@ Range: 250 km
     <control-input axis="/controls/winch/place" control="PLACEWINCH"/>
 </hitch>
 <hitch name="aerotow" x="0.0" y="0.0" z="0.0" force-is-calculated-by-other="0">
-    <tow length="60" weight-per-meter="0.0035" elastic-constant="9000" break-force="1000" mp-auto-connect-period="0.0"/>
+    <tow length="60" weight-per-meter="0.0035" elastic-constant="9000" break-force="100" mp-auto-connect-period="0.0"/>
     <winch max-tow-length="1000" min-tow-length="60" initial-tow-length="60"/>
     <control-input axis="/controls/aerotow/find-aircraft" control="FINDAITOW"/>
 </hitch>
