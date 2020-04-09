@@ -118,11 +118,12 @@ Range: 250 km
 
 <!-- Thruster device which does not produce adjacent moments-->
 
+<!--
   <thruster x="0" y="0" z="0.03" vx="1" vy="0" vz="0" thrust="6.61">
   <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
   </thruster>
+-->
 
-<!--
   <propeller x="0.02" y="0" z="0.03"
 			 mass="0.05"
              moment="0.05"
@@ -136,14 +137,11 @@ Range: 250 km
 	         contra="1"
 	   >
 	    <actionpt x="0" y="0" z="0.03"/>
-    	<piston-engine eng-power="2" eng-rpm="3800" displacement="20" >
+    	<electric-engine Kv="750" V="32" Rm="0.02" >
     		<control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
-    		<control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
-    		<control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
-    		<control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
-    	</piston-engine>
+    	</electric-engine>
   </propeller>
--->
+
 
 
  <!-- main fuselage -->
