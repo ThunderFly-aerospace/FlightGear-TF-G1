@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<PropertyList include="config/TF-G1-yasim-cnf.xml">
+<PropertyList include="config/TF-G1-base.xml">
 
   <sim>
     <description>TF-G1 Autogyro (YASim)</description>
@@ -12,6 +12,9 @@
       <model type="int">2</model>
       <cockpit type="int">3</cockpit>
     </rating>
+
+    <flight-model>yasim</flight-model>
+    <aero>TF-G1-yasim</aero>
 
     <current-view>
         <view-number type="int">5</view-number>
