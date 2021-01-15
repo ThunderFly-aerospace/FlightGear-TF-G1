@@ -305,6 +305,14 @@
                   <property>/sim/hitches/winch/open</property>
                   <value type="bool">true</value>
               </binding>
+              <binding>
+                  <command>nasal</command>
+                  <script>
+                      platform_mass = 0;
+                      setprop("/sim/platform/weight-kg", platform_mass);
+                      gui.popupTip(sprintf("Load ejected"));
+                  </script>
+              </binding>
               <mod-up>
                   <binding>
                       <command>property-assign</command>

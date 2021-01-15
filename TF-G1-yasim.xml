@@ -232,6 +232,9 @@ Range: 250 km
 <weight x="-0.34368" y="-0.225" z="-0.2" mass-prop="/sim/weight[2]/weight-kg"/>
 -->
 
+<!-- weight simulating launch platform -->
+<weight x="-0.343" y="0.0" z="0.0"  mass-prop="/sim/platform/weight-kg"/>
+
 <ballast  x="-0.06471" y="0" z="-0.2" mass-kg="0.3"/>
 <ballast  x="-0.34368" y="0.225" z="-0.2" mass-kg="0.15"/>
 <ballast  x="-0.34368" y="-0.225" z="-0.2" mass-kg="0.15"/>

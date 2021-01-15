@@ -2,10 +2,10 @@ var g_dt = 0;
 var gyro_crashed = 0;
 
 var init = func {
-	
-	
+
+	setprop("/sim/platform/weight-kg", 15);
 	print("Init Nasal Gyro ...done");
-	
+
 	main_loop();
 }
 
@@ -13,12 +13,13 @@ var init = func {
 setlistener("sim/signals/fdm-initialized", init);
 
 var reinit = func {
-	
+
 	g_dt = 0;
 	gyro_crashed = 0;
 	setprop("/controls/rotor/brake", 0);
+	setprop("/sim/platform/weight-kg", 20);
 	print("ReInit Nasal Gyro ...done");
-	
+
 }
 setlistener("/sim/signals/reinit", reinit);
 
@@ -28,30 +29,30 @@ setlistener("/sim/signals/reinit", reinit);
 var main_loop = func {
 
 	engine_values();
-		
+
 	check_g_load();
 	check_vne_structure();
-	
+
 	check_rotor_rpm();
-	
+
 	settimer(main_loop, 0);
 }
 
 var check_g_load = func {
-	
-	
+
+
 	var g_load = getprop("/accelerations/pilot-g");
-	
+
 	if(g_load!=nil and g_load>4.1 )
 	{
 		screen.log.write("Too much G load !!!", 1, 0, 0);
 	}
-	
+
 	if(g_load!=nil and g_load<0)
 	{
 		screen.log.write("Negative G load !!!", 1, 0, 0);
 	}
-	
+
 }
 
 var	check_vne_structure = func {
@@ -74,13 +75,13 @@ var	check_rotor_rpm = func {
 			#setprop("/sim/sound/crash",1);
 			#setprop("/sim/messages/copilot","Rotor overspeed !!!");
 			screen.log.write("Rotor overspeed !!!", 1, 0, 0);
-			
+
 			#uncomment when you want to crash
 			#gyro_crashed = 1;
 		}
-		
+
 	}
-	
+
 }
 
 
@@ -98,24 +99,24 @@ var	release_rotor_brake = func {
 		interpolate("/controls/rotor/brake", 0.0, 2);
 		#print("release_rotor_brake");
 	}
-	
+
 }
 
 var engine_values = func {
 #
-# Since we use egt, estimated cht and rpm values more than once, might as well 
+# Since we use egt, estimated cht and rpm values more than once, might as well
 # retreive and calc once instead of repeating getprop which may be slower.
 #
 	var rev0 = 0;
 	var echt0 = 0;
 	var eoilt0 = 0;
-	
+
 	rev0 = getprop("/engines/engine[0]/rpm");
 	echt0 = getprop("/engines/engine[0]/oil-temperature-degf");
 
 	if (echt0!=nil)
 		eoilt0 = (echt0*0.405);
-	
+
 	var eoilp0=((1*rev0)/(0.01+(eoilt0*0.082))*0.215);
 
 	if (eoilp0 > 130) {
@@ -126,6 +127,3 @@ var engine_values = func {
 	}
 
 }
-
-
-
