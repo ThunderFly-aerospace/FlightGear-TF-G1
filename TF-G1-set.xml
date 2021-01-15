@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<PropertyList include="TF-G1-yasim-cnf.xml">
+<PropertyList include="config/TF-G1-base.xml">
 
   <sim>
     <description>TF-G1 Autogyro (YASim)</description>
@@ -12,6 +12,9 @@
       <model type="int">2</model>
       <cockpit type="int">3</cockpit>
     </rating>
+
+    <flight-model>yasim</flight-model>
+    <aero>TF-G1-yasim</aero>
 
     <current-view>
         <view-number type="int">5</view-number>
@@ -205,75 +208,31 @@
   </hitches>
   </sim>
 
+  <controls>
+        <cabin>
+            <armrests type="bool">0</armrests><!--Black armrests off by default-->
+        </cabin>
+        <breakage>
+            <enabled type="bool">0</enabled><!--Rope Breakage by default disabled-->
+            <altitude-m type="double">50</altitude-m>
+        </breakage>
+        <flight>
+            <rudder2 type="double">0</rudder2>
+        </flight>
+        <gear>
+            <assist-1 type="bool">false</assist-1>
+        </gear>
+        <winch>
+            <place type="bool">false</place>
+        </winch>
+        <aerotow>
+            <find-aircraft type="bool">false</find-aircraft>
+        </aerotow>
+        <smoke type="bool">false</smoke>
+  </controls>
+
   <input>
       <keyboard>
-          <key n="127">
-              <name>Delete</name>
-              <desc>Toggle Reversers</desc>
-              <binding>
-                  <condition>
-                      <equals>
-                          <property>controls/engines/engine[0]/throttle</property>
-                          <value>0</value>
-                      </equals>
-                  </condition>
-                  <command>property-toggle</command>
-                  <property>controls/engines/engine[0]/reverser</property>
-              </binding>
-          </key>
-          <key n="68">
-              <name>D</name>
-              <desc>Toggle Both Windows</desc>
-              <binding>
-                  <condition>
-                      <less-than>
-                          <property>sim/model/door-positions/frontwin/position-norm</property>
-                          <value>0.5</value>
-                      </less-than>
-                  </condition>
-                  <command>property-interpolate</command>
-                  <property>sim/model/door-positions/frontwin/position-norm</property>
-                  <value type="double">1.0</value>
-                  <rate>0.5</rate>
-              </binding>
-              <binding>
-                  <condition>
-                      <greater-than-equals>
-                          <property>sim/model/door-positions/frontwin/position-norm</property>
-                          <value>0.5</value>
-                      </greater-than-equals>
-                  </condition>
-                  <command>property-interpolate</command>
-                  <property>sim/model/door-positions/frontwin/position-norm</property>
-                  <value type="double">0.0</value>
-                  <rate>0.5</rate>
-              </binding>
-              <binding>
-                  <!-- using frontwin in the conditional for readwin in order to synchronize both windows positions -->
-                  <condition>
-                      <less-than>
-                          <property>sim/model/door-positions/frontwin/position-norm</property>
-                          <value>0.5</value>
-                      </less-than>
-                  </condition>
-                  <command>property-interpolate</command>
-                  <property>sim/model/door-positions/rearwin/position-norm</property>
-                  <value type="double">1.0</value>
-                  <rate>0.5</rate>
-              </binding>
-              <binding>
-                  <condition>
-                      <greater-than-equals>
-                          <property>sim/model/door-positions/frontwin/position-norm</property>
-                          <value>0.5</value>
-                      </greater-than-equals>
-                  </condition>
-                  <command>property-interpolate</command>
-                  <property>sim/model/door-positions/rearwin/position-norm</property>
-                  <value type="double">0.0</value>
-                  <rate>0.5</rate>
-              </binding>
-          </key>
           <key n="23">
               <name>Ctrl-w</name>
               <desc>Place winch in front of aircraft</desc>

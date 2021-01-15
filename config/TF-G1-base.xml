@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <sim include="TF-G1_views.xml">
+  <sim include="config/TF-G1_views.xml">
 
     <fuel-fraction>0.8</fuel-fraction>
 
@@ -116,7 +116,7 @@
 	  </help>
 
     <hud>
-      <path n="1">Aircraft/TF-G1/TF-G1_hud.xml</path>
+      <path n="1">Aircraft/TF-G1/config/TF-G1_hud.xml</path>
             <visibility n="1">true</visibility>
             <enable3d n="1">false</enable3d>
             <transparent n="1">false</transparent>
@@ -165,7 +165,7 @@
   </sim>
 
   <input>
-    <keyboard include="TF-G1-keyboard.xml"/>
+    <keyboard include="config/TF-G1-keyboard.xml"/>
   </input>
 
 
