@@ -34,7 +34,7 @@ Range: 250 km
 
 -->
 
-<airplane version="2018.1" mass-kg="3.2" mtow-kg="25">
+<airplane version="YASIM_VERSION_CURRENT" mass-kg="3.2" mtow-kg="25">
 
   <approach speed="20" aoa="0">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.60"/>
@@ -60,8 +60,8 @@ Range: 250 km
        tiltcenterx="-0.24" tiltcentery="0" tiltcenterz="0.30"
        mintiltpitch=" 2"
        maxtiltpitch="22"
-       mintiltroll="-2"
-       maxtiltroll=" 2"
+       mintiltroll="-2.5"
+       maxtiltroll="2"
        relbladecenter="0.7"
        dynamic="1"
        sharedflaphinge="0"
@@ -116,34 +116,25 @@ Range: 250 km
 	<control-input axis="/controls/rotor/brake" control="ROTORBRAKE" src0="0.0" src1="1.0" dst0="0.0" dst1="1.0"/>
   </rotorgear>
 
-<!-- Thruster device which does not produce adjacent moments-->
-
-  <thruster x="0" y="0" z="0.03" vx="1" vy="0" vz="0" thrust="6.61">
-  <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
-  </thruster>
-
-<!--
+  <!-- a fixed pitch propeller ommiting the  max-rpm, min-rpm, fine-stop and coarse-stop, the pitch is set by cruise speed and power parameters. -->
   <propeller x="0.02" y="0" z="0.03"
-			 mass="0.05"
-             moment="0.05"
-             radius="0.203"
-             cruise-speed="70"
-             cruise-rpm="2800"
-             cruise-alt="2000"
-             cruise-power="1"
-             takeoff-power="2"
-             takeoff-rpm="3600"
-	         contra="1"
-	   >
+      mass="0.05"
+      moment="0.0006"
+      radius="0.203"
+      cruise-speed="26"
+      cruise-rpm="7000"
+      cruise-power="0.5"
+      cruise-alt="2000"
+      takeoff-power="0.70"
+      takeoff-rpm="9200"
+      contra="1"
+	    >
 	    <actionpt x="0" y="0" z="0.03"/>
-    	<piston-engine eng-power="2" eng-rpm="3800" displacement="20" >
+    	<electric-engine Kv="750" voltage="15" Rm="0.02" >
     		<control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
-    		<control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
-    		<control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
-    		<control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
-    	</piston-engine>
+    	</electric-engine>
   </propeller>
--->
+
 
 
  <!-- main fuselage -->
@@ -169,7 +160,7 @@ Range: 250 km
 
   </hstab>
 
-  <vstab x="-0.91" y="0.15" z="-0.055"
+  <vstab x="-0.91" y="0.15" z="-0.04"
          chord="0.25"
          length="0.15"
          taper="1"
@@ -182,7 +173,7 @@ Range: 250 km
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
 
-  <vstab x="-0.91" y="-0.15" z="-0.055"
+  <vstab x="-0.91" y="-0.15" z="-0.04"
          chord="0.25"
          length="0.15"
          taper="1"
@@ -195,6 +186,42 @@ Range: 250 km
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
 
+  <!-- front gear -->
+
+  <gear x="0.0" y="0.0" z="-0.205"
+    spring="0.9"
+    damp="0.8"
+    dfric="0.9"
+    sfric="1.1"
+    compression="0.051">
+        <control-input axis="/controls/flight/rudder" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.3" dst1="0.3"/>
+        <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  </gear>
+
+  <!-- two rear gears -->
+
+  <gear x="-0.4" y="0.25" z="-0.205"
+    spring="0.9"
+    damp="0.8"
+    dfric="0.9"
+    sfric="1.1"
+    compression="0.051">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  </gear>
+
+  <gear x="-0.4" y="-0.25" z="-0.205"
+    spring="0.9"
+    damp="0.8"
+    dfric="0.9"
+    sfric="1.1"
+    compression="0.051">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  </gear>
+
+  <!--
   <gear x="-0.06471" y="0.0" z="-0.205" compression="0.051">
         <control-input axis="/controls/flight/rudder" control="STEER" square="false" src0="-1.0" src1="1.0" dst0="-0.3" dst1="0.3"/>
         <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
@@ -209,13 +236,14 @@ Range: 250 km
   <gear x="-0.34368" y="-0.25" z="-0.205" compression="0.051">
         <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
-  </gear>
+  </gear>   -->
 
   <!-- tail gear -->
   <gear x="-1.12" y="0.000" z="-0.09"
 		compression="0.08"
         ignored-by-solver="1" >
   </gear>
+
 
 
 <!-- fuel tank for moddeled engine-->
