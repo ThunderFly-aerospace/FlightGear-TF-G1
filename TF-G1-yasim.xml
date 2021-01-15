@@ -189,11 +189,11 @@ Range: 250 km
   <!-- front gear -->
 
   <gear x="0.0" y="0.0" z="-0.205"
-    spring="0.9"
+    spring="6.2"
     damp="0.8"
     dfric="0.9"
     sfric="1.1"
-    compression="0.051">
+    compression="0.071">
         <control-input axis="/controls/flight/rudder" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.3" dst1="0.3"/>
         <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
@@ -201,22 +201,22 @@ Range: 250 km
 
   <!-- two rear gears -->
 
-  <gear x="-0.4" y="0.25" z="-0.205"
-    spring="0.9"
+  <gear x="-0.6" y="0.35" z="-0.205"
+    spring="6.8"
     damp="0.8"
     dfric="0.9"
     sfric="1.1"
-    compression="0.051">
+    compression="0.071">
         <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   </gear>
 
-  <gear x="-0.4" y="-0.25" z="-0.205"
-    spring="0.9"
+  <gear x="-0.6" y="-0.35" z="-0.205"
+    spring="6.8"
     damp="0.8"
     dfric="0.9"
     sfric="1.1"
-    compression="0.051">
+    compression="0.071">
         <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   </gear>

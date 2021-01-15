@@ -1,9 +1,10 @@
 var g_dt = 0;
 var gyro_crashed = 0;
+var platform_mass = 15;
 
 var init = func {
 
-	setprop("/sim/platform/weight-kg", 15);
+	setprop("/sim/platform/weight-kg", platform_mass);
 	print("Init Nasal Gyro ...done");
 
 	main_loop();
@@ -17,7 +18,7 @@ var reinit = func {
 	g_dt = 0;
 	gyro_crashed = 0;
 	setprop("/controls/rotor/brake", 0);
-	setprop("/sim/platform/weight-kg", 20);
+	setprop("/sim/platform/weight-kg", platform_mass);
 	print("ReInit Nasal Gyro ...done");
 
 }
