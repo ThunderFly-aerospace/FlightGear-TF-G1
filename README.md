@@ -1,5 +1,7 @@
 # TF-G1 UAV electric autogyro FlightGear simulator model
 
+[![Join the chat at https://gitter.im/ThunderFly-aerospace/Simulator](https://badges.gitter.im/ThunderFly-aerospace/Simulator.svg)](https://gitter.im/ThunderFly-aerospace/Simulator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Model of TF-G1 autogyro for [FlightGear](https://home.flightgear.org/) simulator.  Its purpose is flight training of missions, modifications, and measurement campaigns in combination with [PX4 SITL](https://docs.px4.io/master/en/simulation/)
 
 ![Flightgear simulator in action](./docs/img/fly2.png "Flightgear simulator in action")
