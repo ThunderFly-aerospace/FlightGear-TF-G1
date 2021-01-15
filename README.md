@@ -39,9 +39,9 @@ Every other inputs needs to be controlled proportionally, in some cases the comp
 
 ## Model limits
 
-Model zatím zanedbává několik poměrně zásadních vlastností. 
+The current model implementation neglects some properties:
 
-  * Reálný rotor má asi 1/3 hmotnosti uloženou v závaží, které je ve 3/4 délky listu. Model ale předpokládá rovnoměrné rozložení hmotnosti po délce listu. V důsledku toho je v simulátoru energie rotoru nižší, než skutečná.
+  * Real TF-G1 autogyro rotor has 1/3 of mass in load, which is mounted in 3/4 blade lenght. The current model implementation expect equally distributed mass along blade lenght. In the result the rotor energy of simulated rotor is underestimated to real rotor energy.
   * Model využívá na místo elektromotoru spalovací motor, který nemá tak vysokou dynamiku jako elektrický.
   * Tah vrtule je zatím přesně v ose motoru. Reálný kus má vrtuli skloněnou asi 10stupňů dolů
   * Ocas je podepřen uprostřed jedním virtuálním podvozkovým kolečkem pro usnadnění startu a přistání.  Vhodnější by zřejmě bylo model upravit pro dvě kolečka pod každou polovinou ocasní plochy. 
