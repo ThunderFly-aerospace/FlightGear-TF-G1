@@ -150,20 +150,6 @@
                   </binding>
               </item>
               <item>
-                  <label>Simulation Options</label>
-                  <binding>
-                      <command>dialog-show</command>
-                      <dialog-name>options_dialog</dialog-name>
-                  </binding>
-              </item>
-              <item>
-                  <label>Ground services</label>
-                  <binding>
-                      <command>dialog-show</command>
-                      <dialog-name>groundservice_dialog</dialog-name>
-                  </binding>
-              </item>
-              <item>
               <label>Select Livery</label>
               <binding>
                   <command>nasal</command>
