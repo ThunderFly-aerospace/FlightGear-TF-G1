@@ -1,6 +1,6 @@
 var g_dt = 0;
 var gyro_crashed = 0;
-var platform_mass = 15;
+var platform_mass = 0;  #initial startup value
 
 var init = func {
 
@@ -57,6 +57,17 @@ var	check_vne_structure = func {
 	if(kias!=nil and kias>110){
 		screen.log.write("VNE exceeded !!!", 1, 0, 0);
 	}
+}
+
+var	toggle_platform = func {
+		platform_mass_active = 15;
+		if (0 < getprop("/sim/platform/weight-kg"))  {
+			setprop("/sim/platform/weight-kg", 0);
+			gui.popupTip(sprintf("Load ejected"));
+		}  else  {
+			setprop("/sim/platform/weight-kg", platform_mass_active);
+			gui.popupTip(sprintf("Load activated"));
+		}
 }
 
 var	check_rotor_rpm = func {

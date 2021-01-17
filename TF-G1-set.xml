@@ -291,14 +291,6 @@
                   <property>/sim/hitches/winch/open</property>
                   <value type="bool">true</value>
               </binding>
-              <binding>
-                  <command>nasal</command>
-                  <script>
-                      platform_mass = 0;
-                      setprop("/sim/platform/weight-kg", platform_mass);
-                      gui.popupTip(sprintf("Load ejected"));
-                  </script>
-              </binding>
               <mod-up>
                   <binding>
                       <command>property-assign</command>
@@ -306,7 +298,6 @@
                       <value type="bool">false</value>
                   </binding>
               </mod-up>
-
           </key>
           <key n="19">
               <name>Ctrl-s</name>
@@ -315,6 +306,28 @@
                   <command>property-toggle</command>
                   <property>controls/smoke</property>
               </binding>
+          </key>
+          <key n="114">
+        	    <name>r</name>
+        		  <desc>Apply rotor brake</desc>
+        		  <binding>
+        			     <command>nasal</command>
+        			     <script>gyro.apply_rotor_brake()</script>
+        		</binding>
+        		<mod-up>
+        		    <binding>
+        			        <command>nasal</command>
+        			        <script>gyro.release_rotor_brake()</script>
+        		    </binding>
+        		</mod-up>
+        	</key>
+          <key n="108">
+            <name>l</name>
+            <desc>Toggle platform</desc>
+            <binding>
+                <command>nasal</command>
+                <script>gyro.toggle_platform();</script>
+            </binding>
           </key>
       </keyboard>
   </input>

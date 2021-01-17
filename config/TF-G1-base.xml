@@ -73,12 +73,8 @@
                 <desc>Apply rotor brake</desc>
             </key>
 			<key>
-                <name>k</name>
-                <desc>Toggle Look Up</desc>
-            </key>
-			<key>
                 <name>l</name>
-                <desc>Toggle Look Down</desc>
+                <desc>Toggle starting platform</desc>
             </key>
 
       <title>TF-G1 (Autogyro)</title>
