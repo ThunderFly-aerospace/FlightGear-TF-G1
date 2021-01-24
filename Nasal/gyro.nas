@@ -1,6 +1,6 @@
 var g_dt = 0;
 var gyro_crashed = 0;
-var platform_mass = 0;  #initial startup value
+var platform_mass = 0   ;  #initial startup value
 
 var init = func {
 
@@ -68,6 +68,13 @@ var	toggle_platform = func {
 			setprop("/sim/platform/weight-kg", platform_mass_active);
 			gui.popupTip(sprintf("Load activated"));
 		}
+}
+
+
+var	add_platform = func {
+	mass = getprop("/sim/platform/weight-kg");
+    setprop("/sim/platform/weight-kg", mass + 1);
+	gui.popupTip(sprintf("Mass added %d", mass+1));
 }
 
 var	check_rotor_rpm = func {

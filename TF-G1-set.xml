@@ -329,6 +329,14 @@
                 <script>gyro.toggle_platform();</script>
             </binding>
           </key>
+        <key n="47">
+          <name>/</name>
+          <desc>Add platform</desc>
+          <binding>
+              <command>nasal</command>
+              <script>gyro.add_platform();</script>
+          </binding>
+        </key>
       </keyboard>
   </input>
 
