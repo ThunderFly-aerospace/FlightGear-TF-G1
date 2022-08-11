@@ -1,10 +1,12 @@
 var g_dt = 0;
 var gyro_crashed = 0;
 var platform_mass = 0   ;  #initial startup value
+var platform_active = 0;
 
 var init = func {
 
 	setprop("/sim/platform/weight-kg", platform_mass);
+	setprop("/sim/platform/active", platform_active);
 	print("Init Nasal Gyro ...done");
 
 	main_loop();
@@ -19,6 +21,7 @@ var reinit = func {
 	gyro_crashed = 0;
 	setprop("/controls/rotor/brake", 0);
 	setprop("/sim/platform/weight-kg", platform_mass);
+	setprop("/sim/platform/active", platform_active);
 	print("ReInit Nasal Gyro ...done");
 
 }
@@ -32,6 +35,7 @@ var main_loop = func {
 	check_vne_structure();
 
 	check_rotor_rpm();
+	check_platform_force();
 
 	settimer(main_loop, 0);
 }
@@ -61,12 +65,23 @@ var	check_vne_structure = func {
 
 var	toggle_platform = func {
 		platform_mass_active = 15;
-		if (0 < getprop("/sim/platform/weight-kg"))  {
+		if (0 < getprop("/sim/platform/active"))  {
 			setprop("/sim/platform/weight-kg", 0);
+			setprop("/sim/platform/active", 0);
 			gui.popupTip(sprintf("Load ejected"));
 		}  else  {
-			setprop("/sim/platform/weight-kg", platform_mass_active);
+			setprop("/sim/platform/active", 1);
+			setprop("/sim/platform/weight-kg", platform_mass);
 			gui.popupTip(sprintf("Load activated"));
+		}
+}
+
+var	check_platform_force = func {
+		if (0 < getprop("/sim/platform/active"))  {
+			platform_mass = 10*getprop("/fdm/yasim/forces/f-z-lift") + 1;
+			setprop("/sim/platform/weight-kg", platform_mass);
+		}  else  {
+			setprop("/sim/platform/weight-kg", 0);
 		}
 }
 
