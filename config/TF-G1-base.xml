@@ -137,7 +137,7 @@
   </sim>
 
   <input>
-    <keyboard include="config/TF-G1-keyboard.xml"/>
+    <keyboard include="TF-G1-keyboard.xml"/>
   </input>
 
 
